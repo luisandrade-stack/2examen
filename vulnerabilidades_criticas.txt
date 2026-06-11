@@ -1,0 +1,214 @@
+=== REPORTE DE VULNERABILIDADES CRÍTICAS (SAST) ===
+Total de hallazgos analizados: 42
+--------------------------------------------------
+
+Hallazgo #1
+CWE: CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+Archivo: .github\workflows\update-challenges-ebook.yml (Línea 22)
+Descripción: Using variable interpolation `${{...}}` with `github` context data in a `run:` step could allow an attacker to inject their own code into the runner. This would allow them to steal secrets and code. `github` context data can have arbitrary user input and should be treated as untrusted. Instead, use an intermediate environment variable with `env:` to store the data and use the environment variable in the `run:` script. Be sure to use double-quotes the environment variable, like this: "$ENVVAR".
+------------------------------
+Hallazgo #2
+CWE: CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+Archivo: .github\workflows\update-challenges-www-legacy.yml (Línea 27)
+Descripción: Using variable interpolation `${{...}}` with `github` context data in a `run:` step could allow an attacker to inject their own code into the runner. This would allow them to steal secrets and code. `github` context data can have arbitrary user input and should be treated as untrusted. Instead, use an intermediate environment variable with `env:` to store the data and use the environment variable in the `run:` script. Be sure to use double-quotes the environment variable, like this: "$ENVVAR".
+------------------------------
+Hallazgo #3
+CWE: CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+Archivo: .github\workflows\update-challenges-www-legacy.yml (Línea 36)
+Descripción: Using variable interpolation `${{...}}` with `github` context data in a `run:` step could allow an attacker to inject their own code into the runner. This would allow them to steal secrets and code. `github` context data can have arbitrary user input and should be treated as untrusted. Instead, use an intermediate environment variable with `env:` to store the data and use the environment variable in the `run:` script. Be sure to use double-quotes the environment variable, like this: "$ENVVAR".
+------------------------------
+Hallazgo #4
+CWE: CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+Archivo: .github\workflows\update-challenges-www.yml (Línea 27)
+Descripción: Using variable interpolation `${{...}}` with `github` context data in a `run:` step could allow an attacker to inject their own code into the runner. This would allow them to steal secrets and code. `github` context data can have arbitrary user input and should be treated as untrusted. Instead, use an intermediate environment variable with `env:` to store the data and use the environment variable in the `run:` script. Be sure to use double-quotes the environment variable, like this: "$ENVVAR".
+------------------------------
+Hallazgo #5
+CWE: CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+Archivo: .github\workflows\update-challenges-www.yml (Línea 36)
+Descripción: Using variable interpolation `${{...}}` with `github` context data in a `run:` step could allow an attacker to inject their own code into the runner. This would allow them to steal secrets and code. `github` context data can have arbitrary user input and should be treated as untrusted. Instead, use an intermediate environment variable with `env:` to store the data and use the environment variable in the `run:` script. Be sure to use double-quotes the environment variable, like this: "$ENVVAR".
+------------------------------
+Hallazgo #6
+CWE: CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+Archivo: data\static\codefixes\dbSchemaChallenge_1.ts (Línea 5)
+Descripción: Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.
+------------------------------
+Hallazgo #7
+CWE: CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+Archivo: data\static\codefixes\dbSchemaChallenge_3.ts (Línea 11)
+Descripción: Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.
+------------------------------
+Hallazgo #8
+CWE: CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+Archivo: data\static\codefixes\restfulXssChallenge_2.ts (Línea 46)
+Descripción: Detected a call to `replaceAll()` in an attempt to HTML escape the string `tableData[i].description`. Manually sanitizing input through a manually built list can be circumvented in many situations, and it's better to use a well known sanitization library such as `sanitize-html` or `DOMPurify`.
+------------------------------
+Hallazgo #9
+CWE: CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+Archivo: data\static\codefixes\restfulXssChallenge_2.ts (Línea 46)
+Descripción: Detected a call to `replaceAll()` in an attempt to HTML escape the string `tableData[i].description.replaceAll('<', '&lt;')`. Manually sanitizing input through a manually built list can be circumvented in many situations, and it's better to use a well known sanitization library such as `sanitize-html` or `DOMPurify`.
+------------------------------
+Hallazgo #10
+CWE: CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+Archivo: data\static\codefixes\unionSqlInjectionChallenge_1.ts (Línea 6)
+Descripción: Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.
+------------------------------
+Hallazgo #11
+CWE: CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+Archivo: data\static\codefixes\unionSqlInjectionChallenge_3.ts (Línea 10)
+Descripción: Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.
+------------------------------
+Hallazgo #12
+CWE: CWE-798: Use of Hard-coded Credentials
+Archivo: data\static\users.yml (Línea 151)
+Descripción: Generic Secret detected
+------------------------------
+Hallazgo #13
+CWE: CWE-321: Use of Hard-coded Cryptographic Key
+Archivo: frontend\src\app\app.guard.spec.ts (Línea 46)
+Descripción: JWT token detected
+------------------------------
+Hallazgo #14
+CWE: CWE-321: Use of Hard-coded Cryptographic Key
+Archivo: frontend\src\app\last-login-ip\last-login-ip.component.spec.ts (Línea 72)
+Descripción: JWT token detected
+------------------------------
+Hallazgo #15
+CWE: CWE-321: Use of Hard-coded Cryptographic Key
+Archivo: frontend\src\app\last-login-ip\last-login-ip.component.spec.ts (Línea 78)
+Descripción: JWT token detected
+------------------------------
+Hallazgo #16
+CWE: CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes
+Archivo: frontend\src\hacking-instructor\helpers\helpers.ts (Línea 49)
+Descripción: Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.
+------------------------------
+Hallazgo #17
+CWE: CWE-1333: Inefficient Regular Expression Complexity
+Archivo: lib\codingChallenges.ts (Línea 76)
+Descripción: RegExp() called with a `challengeKey` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.
+------------------------------
+Hallazgo #18
+CWE: CWE-1333: Inefficient Regular Expression Complexity
+Archivo: lib\codingChallenges.ts (Línea 78)
+Descripción: RegExp() called with a `challengeKey` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.
+------------------------------
+Hallazgo #19
+CWE: CWE-798: Use of Hard-coded Credentials
+Archivo: lib\insecurity.ts (Línea 44)
+Descripción: Detected a hardcoded hmac key. Avoid hardcoding secrets and consider using an alternate option such as reading the secret from a config file or using an environment variable.
+------------------------------
+Hallazgo #20
+CWE: CWE-798: Use of Hard-coded Credentials
+Archivo: lib\insecurity.ts (Línea 56)
+Descripción: A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials from a secure vault or HSM (Hardware Security Module).
+------------------------------
+Hallazgo #21
+CWE: CWE-798: Use of Hard-coded Credentials
+Archivo: lib\insecurity.ts (Línea 152)
+Descripción: Detected a hardcoded hmac key. Avoid hardcoding secrets and consider using an alternate option such as reading the secret from a config file or using an environment variable.
+------------------------------
+Hallazgo #22
+CWE: CWE-1104: Use of Unmaintained Third Party Components
+Archivo: routes\b2bOrder.ts (Línea 23)
+Descripción: Detected usage of the `notevil` package, which is unmaintained and has vulnerabilities. Using any sort of `eval()` functionality can be very dangerous, but if you must, the `eval` package is an up to date alternative. Be sure that only trusted input reaches an `eval()` function.
+------------------------------
+Hallazgo #23
+CWE: CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')
+Archivo: routes\captcha.ts (Línea 22)
+Descripción: Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.
+------------------------------
+Hallazgo #24
+CWE: CWE-522: Insufficiently Protected Credentials
+Archivo: routes\currentUser.ts (Línea 31)
+Descripción: Bracket object notation with user input is present, this might allow an attacker to access all properties of the object and even it's prototype. Use literal values for object properties.
+------------------------------
+Hallazgo #25
+CWE: CWE-73: External Control of File Name or Path
+Archivo: routes\fileServer.ts (Línea 33)
+Descripción: The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.
+------------------------------
+Hallazgo #26
+CWE: CWE-611: Improper Restriction of XML External Entity Reference
+Archivo: routes\fileUpload.ts (Línea 83)
+Descripción: Detected use of parseXml() function with the `noent` field set to `true`. This can lead to an XML External Entities (XXE) attack if untrusted data is passed into it.
+------------------------------
+Hallazgo #27
+CWE: CWE-73: External Control of File Name or Path
+Archivo: routes\keyServer.ts (Línea 14)
+Descripción: The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.
+------------------------------
+Hallazgo #28
+CWE: CWE-73: External Control of File Name or Path
+Archivo: routes\logfileServer.ts (Línea 14)
+Descripción: The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.
+------------------------------
+Hallazgo #29
+CWE: CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+Archivo: routes\login.ts (Línea 34)
+Descripción: Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.
+------------------------------
+Hallazgo #30
+CWE: CWE-73: External Control of File Name or Path
+Archivo: routes\quarantineServer.ts (Línea 14)
+Descripción: The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the intended directory it should be accessing.
+------------------------------
+Hallazgo #31
+CWE: CWE-601: URL Redirection to Untrusted Site ('Open Redirect')
+Archivo: routes\redirect.ts (Línea 19)
+Descripción: The application redirects to a URL specified by user-supplied input `query` that is not validated. This could redirect users to malicious locations. Consider using an allow-list approach to validate URLs, or warn users they are being redirected to a third-party website.
+------------------------------
+Hallazgo #32
+CWE: CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+Archivo: routes\search.ts (Línea 23)
+Descripción: Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.
+------------------------------
+Hallazgo #33
+CWE: CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')
+Archivo: routes\userProfile.ts (Línea 61)
+Descripción: Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.
+------------------------------
+Hallazgo #34
+CWE: CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')
+Archivo: routes\userProfile.ts (Línea 61)
+Descripción: Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.
+------------------------------
+Hallazgo #35
+CWE: CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+Archivo: routes\videoHandler.ts (Línea 57)
+Descripción: Cannot determine what 'subs' is and it is used with a '<script>' tag. This could be susceptible to cross-site scripting (XSS). Ensure 'subs' is not externally controlled, or sanitize this data.
+------------------------------
+Hallazgo #36
+CWE: CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+Archivo: routes\videoHandler.ts (Línea 71)
+Descripción: Cannot determine what 'subs' is and it is used with a '<script>' tag. This could be susceptible to cross-site scripting (XSS). Ensure 'subs' is not externally controlled, or sanitize this data.
+------------------------------
+Hallazgo #37
+CWE: CWE-134: Use of Externally-Controlled Format String
+Archivo: server.ts (Línea 157)
+Descripción: Detected string concatenation with a non-literal variable in a util.format / console.log function. If an attacker injects a format specifier in the string, it will forge the log message. Try to use constant values for the format string.
+------------------------------
+Hallazgo #38
+CWE: CWE-548: Exposure of Information Through Directory Listing
+Archivo: server.ts (Línea 269)
+Descripción: Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.
+------------------------------
+Hallazgo #39
+CWE: CWE-548: Exposure of Information Through Directory Listing
+Archivo: server.ts (Línea 273)
+Descripción: Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.
+------------------------------
+Hallazgo #40
+CWE: CWE-548: Exposure of Information Through Directory Listing
+Archivo: server.ts (Línea 277)
+Descripción: Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.
+------------------------------
+Hallazgo #41
+CWE: CWE-548: Exposure of Information Through Directory Listing
+Archivo: server.ts (Línea 281)
+Descripción: Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.
+------------------------------
+Hallazgo #42
+CWE: CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+Archivo: views\promotionVideo.pug (Línea 75)
+Descripción: Detected an explicit unescape in a Pug template, using either '!=' or '!{...}'. If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. If you must do this, ensure no external data can reach this location.
+------------------------------
