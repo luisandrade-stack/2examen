@@ -7,6 +7,7 @@ app.use(express.json());
 
 // Vulnerabilidad (Seguridad): Credencial/Secreto quemado directamente en el código
 const stripeApiKey = "sk_live_1234567890abcdef"; 
+const stripeApiKey2 = "sk_live_1234567890abcdasd";
 
 function procesarPago(monto) {
     // Code Smell 1: Variable declarada pero nunca utilizada
